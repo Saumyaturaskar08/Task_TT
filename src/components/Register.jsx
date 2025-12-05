@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; 
 
+
 const Register = () => {
   const navigate = useNavigate(); 
   let [email, setEmail] = useState("");
@@ -24,8 +25,7 @@ const Register = () => {
     localStorage.setItem("users", JSON.stringify(users));
     alert("Registration successful!");
 
-    navigate("/login"); // navigate to login page after registration
-
+    navigate("/login"); 
     setEmail("");
     setPassword("");
     setAgree(false);
@@ -76,7 +76,8 @@ const Register = () => {
         />
         <label htmlFor="agree" className="ml-2 text-sm text-gray-700">
           I agree with the{" "}
-          <a href="#" className="text-blue-600 hover:underline">
+         
+           <a href="#" className="text-blue-600 hover:underline">
             terms and conditions
           </a>
           .

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { useParams } from "react-router-dom";
 
 const ProductDetail = () => {
@@ -7,11 +8,18 @@ const ProductDetail = () => {
   let [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
-    fetch(`https://dummyjson.com/products/${id}`)
-    .then((res) => res.json())
-      .then((data) => setProduct(data))
-      .catch((err) => console.log("Error:", err));
-  }, [id]);
+  const fetchProduct = async () => {
+    try {
+      const response = await axios.get(`https://dummyjson.com/products/${id}`);
+      setProduct(response.data);
+    } catch (err) {
+      console.log("Error:", err);
+    }
+  };
+
+  fetchProduct();
+}, [id]);
+
 
   if (!product) return <p className="p-6">Loading...</p>;
 

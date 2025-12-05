@@ -6,6 +6,7 @@ import UserList from './components/UserList';
 import Products from "./components/Products";
 import ProductDetail from "./components/ProductDetail";
 
+
 function App() {
   return (
     <Router>
@@ -18,6 +19,7 @@ function App() {
           <Route path="/users" element={<UserList />} />
           <Route path="/products" element={<Products/>}/>
           <Route path="/product/:id" element={<ProductDetail />} />
+          
 
         </Routes>
       </div>
