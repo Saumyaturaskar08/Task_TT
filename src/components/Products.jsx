@@ -1,4 +1,3 @@
-//  last correction added for multiple products shown in side bar 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
